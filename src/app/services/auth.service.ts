@@ -20,4 +20,12 @@ export class AuthService {
       password
     });
   }
+
+  reguster(name: string, password: string, email: string) {
+    return this.http.post(`${this.apiURL}/api/v1/auth/register`, {
+      name,
+      password,
+      email
+    });
+  }
 }
