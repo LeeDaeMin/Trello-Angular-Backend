@@ -21,12 +21,12 @@ export class AuthService {
     });
   }
 
-  reguster(name: string, password: string, email: string) {
+  register(name: string, password: string, email: string) {
     return this.http.post(`${this.apiURL}/api/v1/auth/is-available`, {email});
   }
 
 
   isAvailable(email: string){
-
+    return this.http.post<{isAvailable: boolean}>(`${this.apiURL}/api/v1/auth/is-available`, {email});
   }
 }
