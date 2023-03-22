@@ -31,6 +31,8 @@ export class RegisterFormComponent {
     private authService: AuthService
   ) {}
 
+  // logic for the login
+
   register() {
     if (this.form.valid) {
       this.status = 'loading';
