@@ -1,4 +1,31 @@
 <h1 class="text-center font-bold py-2 text-gray-700">Enter your data</h1>
+<form [formGroup]="formUser" novalidate class="space-y-4" (ngSubmit)="validateUser()">
+  <div class="relative">
+    <input
+      formControlName="email"
+      placeholder="Enter email"
+      type="email"
+      name="email"
+      class="w-full rounded bg-gray-100 border-gray-300 border-2"
+    />
+  </div>
+  <div *ngIf="formUser.controls.email.touched && formUser.controls.email.invalid">
+    <p
+      *ngIf="formUser.controls.email.hasError('required')"
+      class="font-medium text-red-500 text-xs mt-1 ml-1"
+    >
+      This field is mandatory
+    </p>
+  </div>
+
+  <div>
+    <app-btn typeBtn="submit" color="success" [loading]="statusUser === 'loading'"
+      >Continue</app-btn
+    >
+  </div>
+</form>
+
+<h1 class="text-center font-bold py-2 text-gray-700">Enter your data</h1>
 <form [formGroup]="form" novalidate class="space-y-4" (ngSubmit)="register()">
   <div>
     <div class="relative">
