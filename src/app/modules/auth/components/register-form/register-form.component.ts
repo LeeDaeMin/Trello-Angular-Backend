@@ -70,7 +70,9 @@ export class RegisterFormComponent {
           } else{
             this.router.navigate(['/login']);
           }
-          this.router.navigate(['/login']);
+          this.router.navigate(['/login'], {
+            queryParams: { email }
+          });
         },
         error: () => {
           this.statusUser = 'failed';
